@@ -14,25 +14,34 @@
     <script>
   // Initialize the Supabase client
   const supabaseUrl = "https://tszvowudspzdoqbemruw.supabase.co"
-  const supabaseKey = "sb_publishable_GOdQfgho54lZ1geMka4mpQ_K681CusQ"
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzenZvd3Vkc3B6ZG9xYmVtcnV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzNTM5NDksImV4cCI6MjA5MDkyOTk0OX0.iEck81nx9OuQlOS6OLX7L0a0cqswkmzMKISMhvSFDgI"
   const supabase = supabase.createClient(supabaseUrl, supabaseKey)
 
-async function printData() {
-    const { data, error } = await supabase.from('test').select('*');
-    
-    if (error) {
-        console.error(error);
-        return;
-    }
-
-    const container = document.getElementById('data-container');
-    container.innerHTML = data.map(item => `
-        <div class="print-item">
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-        </div>
-    `).join('');
+//async function printData() {
+//  async function fetchData() {      
+async function getTableData() {
+  // 2. Fetch data (ensure RLS allows SELECT) [2, 13]
+  const { data, error } = await _supabase.from('test').select('*');
+  
+  if (error) console.error('Error:', error);
+  else renderTable(data);
 }
+
+// 3. Render Table to HTML
+function renderTable(data) {
+  const container = document.getElementById('table-container');
+  let tableHtml = '<table><thead><tr><th>ID</th><th>Name</th></tr></thead><tbody>';
+  
+  data.forEach(row => {
+    tableHtml += `<tr><td>${row.id}</td><td>${row.name}</td></tr>`;
+  });
+  
+  tableHtml += '</tbody></table>';
+  container.innerHTML = tableHtml;
+}
+
+getTableData();
+        
 
 printData();
        
