@@ -17,15 +17,24 @@
   const supabaseKey = "sb_publishable_GOdQfgho54lZ1geMka4mpQ_K681CusQ"
   const supabase = supabase.createClient(supabaseUrl, supabaseKey)
 
-// Example: Fetch data from a table
-async function fetchData() {
-  const { data, error } = await _supabase
-    .from('test')
-    .select('*');
+async function printData() {
+    const { data, error } = await supabase.from('test').select('*');
     
-  if (error) console.error('Error:', error);
-  else console.log('Data:', data);
+    if (error) {
+        console.error(error);
+        return;
+    }
+
+    const container = document.getElementById('data-container');
+    container.innerHTML = data.map(item => `
+        <div class="print-item">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+        </div>
+    `).join('');
 }
+
+printData();
        
     </script>
 
