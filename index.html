@@ -14,14 +14,20 @@
   const supabaseKey = 'sb_publishable_GOdQfgho54lZ1geMka4mpQ_K681CusQ'
   const supabase = supabasejs.createClient(supabaseUrl, supabaseKey)
 
-  // Example: Fetch data from a table
-  async function getData() {
-    const { data, error } = await supabase.from('test').select('*')
-    console.log(data)
-  }
-</script>
+// Example: Fetch data from a table
+async function fetchData() {
+  const { data, error } = await _supabase
+    .from('test')
+    .select('*');
+    
+  if (error) console.error('Error:', error);
+  else console.log('Data:', data);
+}
 
-ç    
+        
+    </script>
+
+   
     <h1>Welcome to My Website</h1>
     <p>This is a simple paragraph of text on my new HTML page.</p>
     <!-- Link to another site -->
