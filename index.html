@@ -6,6 +6,22 @@
     <title>My First Web Page</title>
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.101.1/dist/umd/supabase.min.js"></script>
+    
+    <script>
+  // Initialize the Supabase client
+  const supabaseUrl = 'https://tszvowudspzdoqbemruw.supabase.co'
+  const supabaseKey = 'sb_publishable_GOdQfgho54lZ1geMka4mpQ_K681CusQ'
+  const supabase = supabasejs.createClient(supabaseUrl, supabaseKey)
+
+  // Example: Fetch data from a table
+  async function getData() {
+    const { data, error } = await supabase.from('test').select('*')
+    console.log(data)
+  }
+</script>
+
+ç    
     <h1>Welcome to My Website</h1>
     <p>This is a simple paragraph of text on my new HTML page.</p>
     <!-- Link to another site -->
