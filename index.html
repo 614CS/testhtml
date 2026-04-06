@@ -17,13 +17,29 @@
   const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzenZvd3Vkc3B6ZG9xYmVtcnV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzNTM5NDksImV4cCI6MjA5MDkyOTk0OX0.iEck81nx9OuQlOS6OLX7L0a0cqswkmzMKISMhvSFDgI"
   const supabasePublicClient = supabase.createClient(supabaseUrl, supabaseKey);
 
-  
- (async () => {
-     
-    const response = await supabasePublicClient.from('test').select('*')
-    console.log(response)
-    })()
+    async function fetchData() {
+    const { data, error } = await supabasePublicClient
+      .from('test') // Replace with your table name
+      .select('*');           // Select all columns
 
+    if (error) {
+      console.error('Error fetching data:', error);
+      document.getElementById('data-container').innerText = 'Error loading data.';
+      return;
+    }
+
+    // 3. Display the data in your HTML
+    const container = document.getElementById('data-container');
+    container.innerHTML = data.map(item => `
+      <div>
+        <h3>${item.title || 'No Title'}</h3>
+        <p>${item.description || ''}</p>
+      </div>
+    `).join('');
+  }
+
+  // Call the function
+  fetchData();
 
 
        
