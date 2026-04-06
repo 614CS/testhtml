@@ -18,6 +18,13 @@
   const supabasePublicClient = supabase.createClient(supabaseUrl, supabaseKey)
 
 
+ (async ()≥  {
+     
+    const response = await supabasePublicClient.from('test').select('*')
+    console.log(response)
+    })()
+        
+
 
        
     </script>
