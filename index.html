@@ -31,21 +31,6 @@ async function fetchData() {
   console.log('Fetched Data:', data)
 }
 
-  const tableBody = document.getElementById('table-body')
-  tableBody.innerHTML = '' // Clear existing content
-
-  records.forEach(record => {
-    const row = `
-      <tr>
-        <td>${record.id}</td>
-        <td>${record.created_at}</td>
-        <td>${record.data}</td>
-      </tr>
-    `
-    tableBody.innerHTML += row
-  })
-}
-
         
 fetchData()
 
