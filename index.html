@@ -24,7 +24,7 @@ async function fetchData() {
     .from('test')
     .select('*') // Select all columns
     .eq('id', 4) // Filter for a specific row
-    .single();   // Ensures the result is a single object
+ //   .single();   // Ensures the result is a single object
 
   if (error) {
     console.error('Error fetching data:', error.message)
