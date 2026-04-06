@@ -41,11 +41,11 @@ async function fetchData() {
  // 3. Loop through records and create rows
   records.forEach(record => {
     const row = `
-      <tr>
-        <td>${record.id}</td>
-        <td>${record.created_at}</td>
-        <td>${record.data}</td>
-      </tr>
+      <ul>
+        <li>${record.id}</td>
+        <li>${record.created_at}</td>
+        <li>${record.data}</td>
+      </ul>
     `
     tableBody.innerHTML += row
   })
