@@ -18,13 +18,15 @@
   const supabasePublicClient = supabase.createClient(supabaseUrl, supabaseKey)
 
 
- (async () => {
-     
-    const response = await supabasePublicClient.from('test').select('*')
-    console.log(response)
-    })()
-        
+  async function getData() {
+    const { data, error } = await supabasePublicClient
+      .from('test') // Replace with your actual table name
+      .select('*')
 
+    if (error) {
+      console.error('Error fetching data:', error)
+      return
+    }
 
        
     </script>
