@@ -7,8 +7,7 @@
 </head>
 <body>
 
-
-    
+ <!-- invocar js de supabase -->   
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.101.1/dist/umd/supabase.min.js"></script>
     
     <script>
@@ -20,7 +19,7 @@
 
 async function fetchData() {
  // const { data, error } = await supabasePublicClient
-  const { data: records, error } = await supabasePublicClient      
+    const { data: records, error } = await supabasePublicClient      
     .from('test')
     .select('*') // Select all columns
     .eq('id', 4) // Filter for a specific row
@@ -32,13 +31,14 @@ async function fetchData() {
   }
   
   console.log('Fetched Data:', records)
+// aqui terminaba sin la parte de convertirlo a html 
 //}
 
-  // 2. Target the table body in your HTML
+  //  Target the table body in your HTML
   const tableBody = document.getElementById('table-body')
   tableBody.innerHTML = '' // Clear existing content
 
- // 3. Loop through records and create rows
+ //   Loop through records and create rows
   records.forEach(record => {
     const row = `
       <ul>
