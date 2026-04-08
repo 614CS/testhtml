@@ -1,9 +1,16 @@
-   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.101.1/dist/umd/supabase.min.js"></script>
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+</head>
+<body>
 
-    
-   
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.101.1/dist/umd/supabase.min.js"></script>
+     
   <script>
-
   const supabaseUrl = "https://tszvowudspzdoqbemruw.supabase.co"
   const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzenZvd3Vkc3B6ZG9xYmVtcnV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzNTM5NDksImV4cCI6MjA5MDkyOTk0OX0.iEck81nx9OuQlOS6OLX7L0a0cqswkmzMKISMhvSFDgI"
   const supabasePublicClient = supabase.createClient(supabaseUrl, supabaseKey);
@@ -15,5 +22,12 @@
     if (error) console.error('Error getting data:', error)
     else console.log(JSON.stringify(data, null, 2))
     } 
-
  </script>   
+
+    <h1>Welcome to My Website</h1>
+    <p>This is a simple paragraph of text on my new HTML page.</p>
+ 
+    <!-- Link to another site -->
+    <a href="https://google.com">Visit Google</a>
+</body>
+</html>
