@@ -20,9 +20,8 @@
 async function fetchData() {
  // const { data, error } = await supabasePublicClient
     const { data: records, error } = await supabasePublicClient      
-    .from('test')
-    .select('*') // Select all columns
-    .eq('id', 4) // Filter for a specific row
+    .from('test').select('*') // Select all columns
+ //   .eq('id', 4) // Filter for a specific row
  //   .single();   // Ensures the result is a single object
 
   if (error) {
