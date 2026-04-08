@@ -24,6 +24,14 @@ async function getData() {
  //   .eq('id', 4) // Filter for a specific row
  //   .single();   // Ensures the result is a single object
 
+    const rows = results.map(row => `
+      <tr>
+        <td>${row.id}</td>
+        <td>${row.created_at}</td>
+        <td>${row.data}</td>
+      </tr>
+    `).join('');
+
   if (error) {
     console.error('Error fetching data:', error.message)
     return
@@ -33,13 +41,7 @@ async function getData() {
 // aqui terminaba sin la parte de convertirlo a html 
   }
 
-   const rows = results.map(row => `
-      <tr>
-        <td>${row.id}</td>
-        <td>${row.created_at}</td>
-        <td>${row.data}</td>
-      </tr>
-    `).join('');
+
         
 getData()
 
