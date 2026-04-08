@@ -24,7 +24,7 @@ async function getData() {
  //   .eq('id', 4) // Filter for a specific row
  //   .single();   // Ensures the result is a single object
 
-    const rows = results.map(row => `
+    const rows = records.map(row => `
       <tr>
         <td>${row.id}</td>
         <td>${row.created_at}</td>
