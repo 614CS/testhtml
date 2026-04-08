@@ -37,6 +37,10 @@ async function getData() {
       </tr>
     `).join('');
 
+  // Show it in the HTML
+  document.getElementById("tabletest").innerText = rows;
+
+
   if (error) {
     console.error('Error fetching data:', error.message)
     return
@@ -70,7 +74,7 @@ getData()
               </tr>
             </thead>
             <tbody>
-              ${rows}
+              <id="tabletest">
             </tbody>
           </table>
 
