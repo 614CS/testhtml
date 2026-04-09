@@ -24,5 +24,5 @@
                }
 
 
-              //  getData()
+                getData()
 
