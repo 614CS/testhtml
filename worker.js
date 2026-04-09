@@ -11,7 +11,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 						console.error('Error fetching data:', error.message)
 						return
 					}
-  console.log('Fetched Data:', records)
-}
+                        console.log('Fetched Data:', records)
+               }
 
-fetchData()
+                 getData()
