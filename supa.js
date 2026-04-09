@@ -21,6 +21,7 @@
                  //       console.log('Fetched Data:', records)
 					
                }
+                console.log('Fetched Data:', records)
 
                //  getData()
 
