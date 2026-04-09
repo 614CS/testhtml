@@ -7,7 +7,7 @@
 				async function getData() {
                     const { data: records, error } = await supabasePublicClient      
 					.from('test').select('*') // Select all columns
-					const rows = results.map(row => `
+					const rows = records.map(row => `
                           <tr>
                           <td>${row.CustomerId}</td>
                           <td>${row.CompanyName}</td>
