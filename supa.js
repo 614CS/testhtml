@@ -19,9 +19,10 @@
 					//	return
 				//	}
                  //       console.log('Fetched Data:', records)
+					document.getElementById('tabla-resultados').innerHTML = rows;
 					
                }
-                console.log('Fetched Data:', records)
+
 
                //  getData()
 
