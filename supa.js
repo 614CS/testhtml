@@ -14,13 +14,13 @@
                           <td>${row.data}</td>
                           </tr>
                          `).join('');
-					if (error) {
-						console.error('Error fetching data:', error.message)
-						return
-					}
-                        console.log('Fetched Data:', records)
+				//	if (error) {
+				//		console.error('Error fetching data:', error.message)
+				//		return
+				//	}
+               //         console.log('Fetched Data:', records)
 					
                }
 
-                 getData()
+                // getData()
 
