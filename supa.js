@@ -7,11 +7,19 @@
 				async function getData() {
                     const { data: records, error } = await supabasePublicClient      
 					.from('test').select('*') // Select all columns
+					    const rows = results.map(row => `
+                          <tr>
+                          <td>${row.CustomerId}</td>
+                          <td>${row.CompanyName}</td>
+                          <td>${row.ContactName}</td>
+                          </tr>
+                         `).join('');
 					if (error) {
 						console.error('Error fetching data:', error.message)
 						return
 					}
                         console.log('Fetched Data:', records)
+					
                }
 
                  getData()
