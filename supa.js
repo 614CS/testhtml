@@ -9,9 +9,9 @@
 					.from('test').select('*') // Select all columns
 					const rows = records.map(row => `
                           <tr>
-                          <td>${row.CustomerId}</td>
-                          <td>${row.CompanyName}</td>
-                          <td>${row.ContactName}</td>
+                          <td>${row.id}</td>
+                          <td>${row.created_at}</td>
+                          <td>${row.data}</td>
                           </tr>
                          `).join('');
 					if (error) {
