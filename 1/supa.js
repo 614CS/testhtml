@@ -1,5 +1,5 @@
 
-const DATA_API_URL = 'https://ep-weathered-haze-akbm51ki.neonauth.c-3.us-west-2.aws.neon.tech/neondb/auth/.well-known/jwks.json';
+const DATA_API_URL = 'https://ep-divine-haze-akvab75y.apirest.c-3.us-west-2.aws.neon.tech/neondb/rest/v1';
 const TABLE_NAME = 'test';
 
    fetch(`${DATA_API_URL}/${TABLE_NAME}`)
