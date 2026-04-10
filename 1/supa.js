@@ -1,29 +1,22 @@
-                //import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.101.1/dist/umd/supabase.min.js'
-                //import { createClient } from '@supabase/supabase-js'
-        const supabaseUrl = "https://tszvowudspzdoqbemruw.supabase.co"
-				const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzenZvd3Vkc3B6ZG9xYmVtcnV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzNTM5NDksImV4cCI6MjA5MDkyOTk0OX0.iEck81nx9OuQlOS6OLX7L0a0cqswkmzMKISMhvSFDgI"
-				const supabasePublicClient = supabase.createClient(supabaseUrl, supabaseKey);
-	            //const supabasePublicClient = createClient(supabaseUrl, supabaseKey);
+
+const API_KEY = 'napi_ov9rffpv8o4so3as87f8ekgxoqdkrzuh1draa2w125yc91xoijpvvt4gwf2u8712';
+const DATA_API_URL = 'https://ep-weathered-haze-akbm51ki.apirest.c-3.us-west-2.aws.neon.tech/neondb/rest/v1';
+const TABLE_NAME = 'test';
 
 				async function getData() {
-                    const { data: records, error } = await supabasePublicClient      
-					.from('test').select('*') // Select all columns
-					console.log(JSON.stringify(records, null, 2))
-					const rows = records.map(row => `
-                          <tr>
-                          <td>${row.id}</td>
-                          <td>${row.created_at}</td>
-                          <td>${row.data}</td>
-                          </tr>
-                         `).join('');
-					//if (error) {
-				//		console.error('Error fetching data:', error.message)
-					//	return
-				//	}
-                 //       console.log('Fetched Data:', records)
-					document.getElementById('tabla-resultados').innerHTML = rows;
-					
-               }
+  try {
+    const response = await fetch(`${DATA_API_URL}/${TABLE_NAME}?select=*`, {
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
 
 
                 getData()
