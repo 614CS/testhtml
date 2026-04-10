@@ -8,6 +8,7 @@
 				async function getData() {
                     const { data: records, error } = await supabasePublicClient      
 					.from('test').select('*') // Select all columns
+					console.log(JSON.stringify(records, null, 2))
 					const rows = records.map(row => `
                           <tr>
                           <td>${row.id}</td>
