@@ -1,5 +1,5 @@
 
-const API_KEY = 'napi_ov9rffpv8o4so3as87f8ekgxoqdkrzuh1draa2w125yc91xoijpvvt4gwf2u8712';
+const API_KEY = 'napi_iuh650mzge7ia63v9zg8tlakuucu2gnkjth47qqakpl30k1lay2kfoy3768mo2uf';
 const DATA_API_URL = 'https://ep-weathered-haze-akbm51ki.apirest.c-3.us-west-2.aws.neon.tech/neondb/rest/v1';
 const TABLE_NAME = 'test';
 
