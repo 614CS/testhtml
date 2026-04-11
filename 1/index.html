@@ -24,17 +24,21 @@
     <!-- 1. Load the Supabase Client Library via jsDelivr CDN -->
 
         
-<script type="module"> import neondatabaseauth from 'https://cdn.jsdelivr.net/npm/@neondatabase/auth@0.2.0-beta.1/+esm' </script>
+<script type="module"> import neondatabaseauth from 'https://cdn.jsdelivr.net/npm/@neondatabase/auth@0.2.0-beta.1/+esm'; 
+export const authClient = createAuthClient({
+  baseURL: 'https://ep-divine-haze-akvab75y.neonauth.c-3.us-west-2.aws.neon.tech/neondb/auth'
+});</script>
 
         
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script src="supa.js" defer></script>
+        
     <script>
             async function loginAndGetToken(email, password) {
   // 1. Perform login
   const { data: signInData, error: signInError } = await authClient.signIn.email({
-    email,
-    password,
+    123@gmail.com,
+    dfasdfsf,
   });
 
   if (signInError) throw signInError;
@@ -46,6 +50,7 @@
 
   // The JWT string (e.g., "eyJhbGciOiJFZ...")
   return tokenData.token; 
+  coonsole.log(tokenData.token)                 
 }
     </script>
         
