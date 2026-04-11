@@ -34,24 +34,29 @@ export const authClient = createAuthClient({
     <script src="supa.js" defer></script>
         
     <script>
-            async function loginAndGetToken(email, password) {
-  // 1. Perform login
-  const { data: signInData, error: signInError } = await authClient.signIn.email({
-    123@gmail.com,
-    dfasdfsf,
+  async function loginAndGetToken(email, password) {
+  // 1. Iniciar sesión con credenciales
+  const { data, error } = await authClient.signIn.email({
+    email: "123@gmail.com",
+    password: "dfasdfsf",
   });
 
-  if (signInError) throw signInError;
+  if (error) {
+    console.error("Error al iniciar sesión:", error.message);
+    return null;
+  }
 
-  // 2. Retrieve the raw JWT token
-  const { data: tokenData, error: tokenError } = await authClient.token();
+  // 2. Obtener la sesión actual para extraer el JWT
+  const sessionResult = await authClient.getSession();
   
-  if (tokenError) throw tokenError;
-
-  // The JWT string (e.g., "eyJhbGciOiJFZ...")
-  return tokenData.token; 
-  coonsole.log(tokenData.token)                 
-}
+  if (sessionResult.data?.session) {
+    // El token JWT se encuentra en la propiedad 'token' de la sesión
+    const jwtToken = sessionResult.data.session.token;
+    console.log("Tu token JWT:", jwtToken);
+    return jwtToken;
+  }
+  
+  return null;
     </script>
         
 </head>
