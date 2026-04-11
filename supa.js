@@ -20,7 +20,7 @@
 					//	return
 				//	}
                     console.table(records)
-					//                     console.table('Fetched Data:', records)
+				//	console.log('Fetched Data:', records)
 					document.getElementById('tabla-resultados').innerHTML = rows;
 					
                }
