@@ -23,22 +23,8 @@
     <title>Supabase Console Fetch</title>
     <!-- 1. Load the Supabase Client Library via jsDelivr CDN -->
 
-        
-<script type="module"> 
-import { neon } from 'https://cdn.jsdelivr.net/npm/@neondatabase/serverless@1.0.2/+esm';
 
-// Get your connection string from the Neon Console
-const sql = neon(process.env.https://ep-divine-haze-akvab75y.apirest.c-3.us-west-2.aws.neon.tech/neondb/rest/v1/test);
 
-async function getTableData() {
-  // Execute a standard SQL query
-  const rows = await sql`SELECT * FROM test`;
-  console.log(rows);
-  return rows;
-}
-</script>
-        
-<script type="module"> export const authClient = createAuthClient({ baseURL: 'https://ep-divine-haze-akvab75y.neonauth.c-3.us-west-2.aws.neon.tech/neondb/auth'}) </script>
         
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script src="supa.js" defer></script>
