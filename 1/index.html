@@ -24,41 +24,30 @@
     <!-- 1. Load the Supabase Client Library via jsDelivr CDN -->
 
         
-<script type="module"> import neondatabaseauth from 'https://cdn.jsdelivr.net/npm/@neondatabase/auth@0.2.0-beta.1/+esm' </script>
+<script type="module"> 
+import neondatabaseauth from 'https://cdn.jsdelivr.net/npm/@neondatabase/auth@0.2.0-beta.1/+esm';
+const client = createClient({
+  dataApi: {
+    url: "https://ep-divine-haze-akvab75y.apirest.c-3.us-west-2.aws.neon.tech/neondb/rest/v1",
+  },
+});
+
+async function getAnonymousData() {
+  const { data, error } = await client
+    .from('test')
+    .select('*');
+
+  if (error) console.error(error);
+  else console.log(data);
+}
+</script>
+        
 <script type="module"> export const authClient = createAuthClient({ baseURL: 'https://ep-divine-haze-akvab75y.neonauth.c-3.us-west-2.aws.neon.tech/neondb/auth'}) </script>
         
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script src="supa.js" defer></script>
         
-    <script>
-  
-            
-  async function loginAndGetToken(email, password) {
-  // 1. Iniciar sesión con credenciales
-  const { data, error } = await authClient.signIn.email({
-    email: "123@gmail.com",
-    password: "dfasdfsf",
-  });
 
-  if (error) {
-    console.error("Error al iniciar sesión:", error.message);
-    return null;
-  }
-
-  // 2. Obtener la sesión actual para extraer el JWT
-  const sessionResult = await authClient.getSession();
-  
-  if (sessionResult.data?.session) {
-    // El token JWT se encuentra en la propiedad 'token' de la sesión
-    const jwtToken = sessionResult.data.session.token;
-    console.log("Tu token JWT:", jwtToken);
-    return jwtToken;
-  }
-  
-  return null;
-  }        
-    loginAndGetToken()        
-    </script>
         
 </head>
 <body>
