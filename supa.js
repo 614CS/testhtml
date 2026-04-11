@@ -19,7 +19,8 @@
 				//		console.error('Error fetching data:', error.message)
 					//	return
 				//	}
-                    console.log('Fetched Data:', records)
+                    console.table(records)
+					//                     console.table('Fetched Data:', records)
 					document.getElementById('tabla-resultados').innerHTML = rows;
 					
                }
