@@ -25,20 +25,16 @@
 
         
 <script type="module"> 
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@neondatabase/neon-js@0.2.0-beta.1/+esm'
-const client = createClient({
-  dataApi: {
-    url: "https://ep-divine-haze-akvab75y.apirest.c-3.us-west-2.aws.neon.tech/neondb/rest/v1",
-  },
-});
+import { neon } from 'import neondatabaseserverless from 'https://cdn.jsdelivr.net/npm/@neondatabase/serverless@1.0.2/+esm'';
 
-async function getAnonymousData() {
-  const { data, error } = await client
-    .from('test')
-    .select('*');
+// Get your connection string from the Neon Console
+const sql = neon(process.env.https://ep-divine-haze-akvab75y.apirest.c-3.us-west-2.aws.neon.tech/neondb/rest/v1/test);
 
-  if (error) console.error(error);
-  else console.log(data);
+async function getTableData() {
+  // Execute a standard SQL query
+  const rows = await sql`SELECT * FROM test`;
+  console.log(rows);
+  return rows;
 }
 </script>
         
