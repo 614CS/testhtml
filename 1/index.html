@@ -22,8 +22,29 @@
     <h1>asasdsfasf</h1>
     <title>Supabase Console Fetch</title>
     <!-- 1. Load the Supabase Client Library via jsDelivr CDN -->
+    <script> import { createAuthClient } from '@neondatabase/neon-js/auth' </script>  
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script src="supa.js" defer></script>
+    <script>
+            async function loginAndGetToken(email, password) {
+  // 1. Perform login
+  const { data: signInData, error: signInError } = await authClient.signIn.email({
+    email,
+    password,
+  });
+
+  if (signInError) throw signInError;
+
+  // 2. Retrieve the raw JWT token
+  const { data: tokenData, error: tokenError } = await authClient.token();
+  
+  if (tokenError) throw tokenError;
+
+  // The JWT string (e.g., "eyJhbGciOiJFZ...")
+  return tokenData.token; 
+}
+    </script>
+        
 </head>
 <body>
     <h1>Check the Console (F12) to see data</h1>
