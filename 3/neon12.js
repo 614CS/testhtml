@@ -4,7 +4,7 @@ import { neon } from 'https://cdn.jsdelivr.net/npm/@neondatabase/serverless@1.0.
 //const authToken = getAuthToken();
 
 // Initialize the Neon client with connection string and auth token
-const sql = neon('postgresql://anonymous@ep-divine-haze-akvab75y-pooler.c-3.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require', { authToken });
+const sql = neon('postgresql://anonymous@ep-divine-haze-akvab75y-pooler.c-3.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require');
 
 // Run a query
 const posts = await sql('SELECT * FROM test');
