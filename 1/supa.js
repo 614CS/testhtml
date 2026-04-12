@@ -1,21 +1,11 @@
-//const DATA_API_URL = "https://ep-still-grass-a88vqwik.apirest.eastus2.azure.neon.tech/neondb/rest/v1";
-const DATA_API_URL = "https://ep-divine-haze-akvab75y.apirest.c-3.us-west-2.aws.neon.tech/neondb/rest/v1";
+const client = createClient({
+  url: "libsql://test-junyu.aws-us-east-2.turso.io",
+  authToken: "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJleHAiOjE3NzYwNTM0NzYsImlhdCI6MTc3NTk2NzA3NiwiaWQiOiIwMTlkN2UyOS1iZDAxLTcxYTUtODE0Ni02ZDNmYjQyMzY2ZjEiLCJyaWQiOiI1NjUyZjY3NC03Y2E1LTRhYzQtODY0OC1kMDFkMzdmOWExMDYifQ.wSXrCodXMYmXYxyALcRs5KlS5RYOUw8-npoO-m_fZZmcX10eIU8o2-7b8B9CWRz0pHetNDkblleIUDbWhzzQAw",
+});
 
-const TABLE_NAME = "test";
+async function fetchData() {
+  const rs = await client.execute("SELECT * FROM test");
+  console.table(rs.rows); // console.table() provides a clean table view in the console
+}
 
-fetch(`${DATA_API_URL}/${TABLE_NAME}`, {
-  method: 'GET',
-  headers: {
-        'Accept': 'application/json'
-      }
-
-})
-.then(response => {
-  if (!response.ok) throw new Error(`Error: ${response.status} ${response.statusText}`);
-  return response.json();
-})
-.then(data => {
-  console.log(`Datos de la tabla "${TABLE_NAME}":`);
-  console.table(data); // Muestra los datos en formato de tabla visual en la consola
-})
-.catch(error => console.error('Error al consultar Neon:', error));
+fetchData();
