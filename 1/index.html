@@ -34,7 +34,7 @@ const client = createClient({
 
 async function showTable() {
   try {
-    const rs = await client.execute("SELECT * FROM your_table_name");
+    const rs = await client.execute("SELECT * FROM test");
     console.table(rs.rows); // Using console.table displays it as a formatted table
   } catch (e) {
     console.error(e);
