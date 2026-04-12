@@ -23,8 +23,9 @@
     <title>Supabase Console Fetch</title>
     <!-- 1. Load the Supabase Client Library via jsDelivr CDN -->
 
- <script type="module"> import libsqlclient from 'https://cdn.jsdelivr.net/npm/@libsql/client@0.17.2/+esm'; 
- 
+ <script> 
+         
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@libsql/client@0.17.2/+esm'; 
        
 const client = createClient({
   url: "libsql://test-junyu.aws-us-east-2.turso.io",
