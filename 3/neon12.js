@@ -1,4 +1,4 @@
-import neondatabaseserverless from 'https://cdn.jsdelivr.net/npm/@neondatabase/serverless@1.0.2/+esm';
+import { neon } from 'https://cdn.jsdelivr.net/npm/@neondatabase/serverless@1.0.2/+esm';
 
 // Retrieve the JWT token (implementation depends on your auth system)
 const authToken = getAuthToken();
