@@ -8,7 +8,7 @@ const sql = neon('postgresql://anonymous@ep-divine-haze-akvab75y-pooler.c-3.us-w
 
 // Run a query
 const posts = await sql('SELECT * FROM test');
-onsole.log('Fetched Data:', posts)
+console.log('Fetched Data:', posts)
 
 // See https://neon.com/docs/serverless/serverless-driver
 // for more information
