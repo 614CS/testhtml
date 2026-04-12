@@ -4,6 +4,7 @@
               //  const supabasePublicClient = _supabase.createClient(supabaseUrl, supabaseKey);
 	            //const supabasePublicClient = createClient(supabaseUrl, supabaseKey);
 
+
 				async function getData() {
                     const { data: records, error } = await _supabase      
 					.from('test').select('*') // Select all columns
