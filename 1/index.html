@@ -23,7 +23,7 @@
     <title>Supabase Console Fetch</title>
     <!-- 1. Load the Supabase Client Library via jsDelivr CDN -->
 
-  <script src="https://cdn.jsdelivr.net/npm/@libsql/client@0.17.2/lib-esm/web.min.js"></script>
+ <script type="module"> import libsqlclient from 'https://cdn.jsdelivr.net/npm/@libsql/client@0.17.2/+esm' </script>
 
       <script >          
             const client = libsql.createClient({
