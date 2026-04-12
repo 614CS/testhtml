@@ -1,6 +1,6 @@
                 //import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.101.1/dist/umd/supabase.min.js'   //nose pueden dos scripts?
                 //import { createClient } from '@supabase/supabase-js'
-                import { _supabase } from './query.js';
+              //  import { _supabase } from './query.js';
               //  const supabasePublicClient = _supabase.createClient(supabaseUrl, supabaseKey);
 	            //const supabasePublicClient = createClient(supabaseUrl, supabaseKey);
 
