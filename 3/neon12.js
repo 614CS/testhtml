@@ -1,4 +1,6 @@
 import { neon } from 'https://cdn.jsdelivr.net/npm/@neondatabase/serverless@1.0.2/+esm';
+import { dotenv } from 'https://cdn.jsdelivr.net/npm/dotenv@17.4.2/lib/main.min.js';
+
 
 // Retrieve the JWT token (implementation depends on your auth system)
 //const authToken = getAuthToken();
