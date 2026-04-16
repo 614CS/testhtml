@@ -2,7 +2,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@libsql/client@0.17.2
        
 const client = createClient({
   url: "libsql://test-junyu.aws-us-east-2.turso.io",
-  authToken: "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJleHAiOjE3NzYwNTM0NzYsImlhdCI6MTc3NTk2NzA3NiwiaWQiOiIwMTlkN2UyOS1iZDAxLTcxYTUtODE0Ni02ZDNmYjQyMzY2ZjEiLCJyaWQiOiI1NjUyZjY3NC03Y2E1LTRhYzQtODY0OC1kMDFkMzdmOWExMDYifQ.wSXrCodXMYmXYxyALcRs5KlS5RYOUw8-npoO-m_fZZmcX10eIU8o2-7b8B9CWRz0pHetNDkblleIUDbWhzzQAw"
+  authToken: "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJleHAiOjE3NzY5NzY2MTksImlhdCI6MTc3NjM3MTgxOSwiaWQiOiIwMTlkN2UyOS1iZDAxLTcxYTUtODE0Ni02ZDNmYjQyMzY2ZjEiLCJyaWQiOiI1NjUyZjY3NC03Y2E1LTRhYzQtODY0OC1kMDFkMzdmOWExMDYifQ.JJVpkae4Zbs3HMnIy8SIbJBHGykZwyFCKsZGuY8WgT26vqyVACi1UrtJ9YcBLgL5AwsvKJwbwMfG84fDBvAUBA"
 });
 
 async function showTable() {
