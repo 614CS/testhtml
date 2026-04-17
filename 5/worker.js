@@ -5507,9 +5507,12 @@ var index_default = {
     try {
       await client.connect();
       const { rows } = await client.query("SELECT * FROM test LIMIT 10");
+      console.log(rows)
+				//	console.log('Fetched Data:', records)
       return new Response(JSON.stringify(rows), {
         headers: { "content-type": "application/json" }
       });
+      console.log(Response)
     } catch (e) {
       return new Response(e.message, { status: 500 });
     } finally {
